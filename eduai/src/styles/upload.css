@@ -1,0 +1,68 @@
+.uzone {
+  border: 2px dashed rgba(245,180,60,.3); border-radius: var(--rl);
+  padding: 52px 40px; text-align: center; cursor: pointer;
+  transition: all .25s; background: rgba(245,180,60,.02);
+  position: relative; overflow: hidden;
+}
+.uzone:hover, .uzone.drag { border-color: var(--gold); background: rgba(245,180,60,.04); }
+.uzone.drag { border-color: var(--teal); }
+
+.uzone-icon  { font-size: 44px; margin-bottom: 14px; }
+.uzone-title { font-family: var(--fd); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.uzone-sub   { color: var(--t2); font-size: 14px; }
+.uzone-sub span { color: var(--gold); font-weight: 500; }
+
+.ufmts { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+.fpill {
+  padding: 4px 12px; border-radius: 99px; font-size: 11px;
+  font-weight: 600; font-family: var(--fm);
+  background: var(--glass); border: 1px solid var(--border); color: var(--t2);
+}
+
+.file-list { display: flex; flex-direction: column; gap: 9px; margin-top: 20px; }
+
+.file-item {
+  display: flex; align-items: center; gap: 13px;
+  padding: 13px 16px; background: var(--card);
+  border: 1px solid var(--border); border-radius: var(--r);
+  transition: border-color .2s;
+}
+.file-item:hover { border-color: rgba(255,255,255,.15); }
+
+.file-thumb { width: 36px; height: 36px; border-radius: 7px; object-fit: cover; border: 1px solid var(--border); flex-shrink: 0; }
+.file-icon  { font-size: 20px; }
+
+.file-info { flex: 1; min-width: 0; }
+.file-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.file-meta { font-size: 12px; color: var(--t3); font-family: var(--fm); }
+
+.file-status { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 99px; }
+.file-status.ready    { background: rgba(56,217,192,.1); color: var(--teal); border: 1px solid rgba(56,217,192,.25); }
+.file-status.processing { background: var(--gdim); color: var(--gold); border: 1px solid rgba(245,180,60,.25); }
+
+.file-remove {
+  background: none; border: none; color: var(--t3);
+  cursor: pointer; font-size: 15px; padding: 0 4px; margin-left: 6px;
+  transition: color .15s; line-height: 1;
+}
+.file-remove:hover { color: var(--red); }
+
+/* Preview modal */
+.preview-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.8);
+  backdrop-filter: blur(6px); display: flex; align-items: center;
+  justify-content: center; z-index: 500; animation: fadeIn .2s ease;
+}
+.preview-box {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--rl); padding: 22px;
+  max-width: 80vw; max-height: 85vh;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.preview-header { display: flex; justify-content: space-between; align-items: center; }
+.preview-img { max-width: 100%; max-height: 65vh; border-radius: 9px; object-fit: contain; border: 1px solid var(--border); }
+.preview-close {
+  background: var(--rdim); border: 1px solid rgba(255,95,95,.25);
+  border-radius: 8px; color: var(--red); cursor: pointer;
+  padding: 5px 12px; font-family: var(--fb); font-size: 13px;
+}
